@@ -16,7 +16,7 @@
             "discord": ""
         }
     ],
-	"download": "https://github.com/creichenau/fleeting-luck/archive/refs/tags/1.zip",
+	"download": "https://raw.githubusercontent.com/creichenau/waypoint-tracker/main/waypoint-tracker.zip",
 	"scripts": [
 		"scripts/hooks.js"
 	],
