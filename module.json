@@ -1,0 +1,26 @@
+{
+	"name": "waypoint-tracker",
+	"title": "Waypoint Tracker",
+	"description": "Adds a screen to track waypoints for Dragonbane Solo Mode",
+	"version": "1.0.0",
+	"minimumCoreVersion" : "10.288",
+    "compatibleCoreVersion" : 10,
+    "compatibility": {
+        "minimum": 10,
+        "verified": "10.288"
+    },
+    "author": "Reichenau, cody",
+    "authors": [
+        {
+            "name": "Cody Reichenau",
+            "discord": ""
+        }
+    ],
+	"download": "https://github.com/creichenau/fleeting-luck/archive/refs/tags/1.zip",
+	"scripts": [
+		"scripts/hooks.js"
+	],
+	"styles": [
+		"styles/styles.css"
+	]
+}

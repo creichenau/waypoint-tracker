@@ -1,0 +1,94 @@
+.btn-dashboard {
+    height: inherit; 
+}
+
+.luck-dashboard {
+    height: auto;
+    min-height: 120px;
+    width: auto; 
+    min-width: 400px;
+}
+
+.luck-form-btn {
+    max-height: 2rem;
+}
+
+.luck-form-add-btn {
+    height: 30px;
+    width: 28px;
+}
+
+.luck-form-sub-btn {
+    height: 30px;
+    width: 28px;
+}
+
+.characters {
+    display: flex;
+    flex: initial;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.char-member-avatar {
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    border: 0px;
+    cursor: pointer;
+}
+
+.drop-target {
+    min-height: 200px;
+}
+
+.month-header {
+    font-size: 18pt;
+    padding: 20px;
+}
+
+.month-table {
+    padding: 10px;
+    width: 80%;
+    border-spacing: 30px;
+}
+
+.month-table th {
+    border: 1px black solid;
+    border-radius: 4px;
+    width: 100px;
+    margin: 20px;
+    height: 100px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+
+.month-table td {
+    padding: 10px;
+    text-align: center;
+}
+
+.month-table a {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.month-table td a.selected {
+    color: red;
+    border: 1px red solid;
+    padding: 10px;
+}
+
+.waypoint {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    line-height: 100px;
+}
+
+.marked {
+    background-image: url(../images/marker.png);
+    background-size: contain;
+}

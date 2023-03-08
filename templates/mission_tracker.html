@@ -1,0 +1,135 @@
+<div>
+    Waypoints: <select name="ddlWaypoints" id="ddlWaypoints">
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8" selected>8</option>
+    </select>
+</div>
+<table class="month-table">
+    <tr>
+        <th>
+            <div id="div1" class="waypoint">1</div>
+        </th>
+        <th>
+            <div id="div2" class="waypoint">2</div>
+        </th>
+        <th>
+            <div id="div3" class="waypoint">3</div>
+        </th>
+        <th>
+            <div id="div4" class="waypoint">4</div>
+        </th>
+        <th>
+            <div id="div5" class="waypoint">5</div>
+        </th>
+        <th id="th6">
+            <div id="div6" class="waypoint">6</div>
+        </th>
+        <th id="th7">
+            <div id="div7" class="waypoint">7</div>
+        </th>
+        <th id="th8">
+            <div id="div8" class="waypoint">8</div>
+        </th>
+    </tr>
+
+</table>
+<button name="updateStatus" id="updateStatus" style="visibility: hidden;" class="update-btn">SAVE</button>
+<script>
+    $(function () {
+
+        let prg = window.waypointTracker.datamanager.progress();
+        $('#ddlWaypoints').val(prg.progress.waypoint_count).prop('selected', true);
+
+        if (parseInt(prg.progress.waypoint_count) < 8) {
+            $("#th8").hide();
+        }
+        if (parseInt(prg.progress.waypoint_count) < 7) {
+            $("#th7").hide();
+        }
+        if (parseInt(prg.progress.waypoint_count) < 6) {
+            $("#th6").hide();
+        }
+
+        if (prg.progress.marked.indexOf("1") > -1) {
+            $('#div1').addClass('marked');
+        }
+        if (prg.progress.marked.indexOf("2") > -1) {
+            $('#div2').addClass('marked');
+        }
+        if (prg.progress.marked.indexOf("3") > -1) {
+            $('#div3').addClass('marked');
+        }
+        if (prg.progress.marked.indexOf("4") > -1) {
+            $('#div4').addClass('marked');
+        }
+        if (prg.progress.marked.indexOf("5") > -1) {
+            $('#div5').addClass('marked');
+        }
+        if (prg.progress.marked.indexOf("6") > -1) {
+            $('#div6').addClass('marked');
+        }
+        if (prg.progress.marked.indexOf("7") > -1) {
+            $('#div7').addClass('marked');
+        }
+        if (prg.progress.marked.indexOf("8") > -1) {
+            $('#div8').addClass('marked');
+        }
+
+        $('.update-btn').on('click', function () {
+            console.log('waypoint-tracker | SAVING...');
+            
+            let current = {
+                'waypoint_count': $('#ddlWaypoints').val(),
+                'marked': []
+            };
+            if ($('#div1').hasClass('marked')) {
+                current.marked.push("1");
+            }
+            if ($('#div2').hasClass('marked')) {
+                current.marked.push("2");
+            }
+            if ($('#div3').hasClass('marked')) {
+                current.marked.push("3");
+            }
+            if ($('#div4').hasClass('marked')) {
+                current.marked.push("4");
+            }
+            if ($('#div5').hasClass('marked')) {
+                current.marked.push("5");
+            }
+            if ($('#div6').hasClass('marked')) {
+                current.marked.push("6");
+            }
+            if ($('#div7').hasClass('marked')) {
+                current.marked.push("7");
+            }
+            if ($('#div8').hasClass('marked')) {
+                current.marked.push("8");
+            }
+            console.log('waypoint-tracker | ' + JSON.stringify(current));
+            window.waypointTracker.datamanager.updateProgress(current);
+        });
+
+        $('.waypoint').on('click', function () {
+            $('#' + this.id).toggleClass('marked');
+            $('#updateStatus').click();
+        });
+
+        $('select').on('change', function () {
+            $("#th6").show();
+            $("#th7").show();
+            $("#th8").show();
+            if (parseInt(this.value) < 8) {
+                $("#th8").hide();
+            }
+            if (parseInt(this.value) < 7) {
+                $("#th7").hide();
+            }
+            if (parseInt(this.value) < 6) {
+                $("#th6").hide();
+            }
+        });
+    });
+</script>
